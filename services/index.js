@@ -1,5 +1,8 @@
 import { request, gql } from "graphql-request"
+import axios from "axios"
+
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
+const api = process.env.NEXT_PUBLIC_NEWS_URL;
 
 export const getPosts = async () => {
     const query = gql`

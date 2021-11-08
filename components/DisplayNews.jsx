@@ -2,6 +2,7 @@ import React from 'react'
 import axios from "axios"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import {api} from "../pages/api/comments"
 
 const responsive = {
   superLargeDesktop: {
@@ -26,7 +27,7 @@ const DisplayNews = () => {
 
     const [news, setNews] = React.useState([])
   
-    const api = process.env.NEXT_PUBLIC_NEWS_URL;
+    //const api = process.env.NEXT_PUBLIC_NEWS_URL;
 
     React.useEffect(() => {
         const loadNews = async () => {

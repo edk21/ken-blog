@@ -2,6 +2,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 const graphcmsToken = process.env.GRAPHCMS_TOKEN;
+export const api = process.env.NEXT_PUBLIC_NEWS_URL;
 
 /** *************************************************************
  * Any file inside the folder pages/api is mapped to /api/* and  *
@@ -10,7 +11,7 @@ const graphcmsToken = process.env.GRAPHCMS_TOKEN;
 
 // export a default function for API route to work
 export default async function comments(req, res) {
-  console.log({graphcmsToken});
+  //console.log({graphcmsToken});
   //const { name, email, comment, slug } =req.body;
   const graphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {
@@ -37,7 +38,6 @@ export default async function comments(req, res) {
       }
     }
   `;
-
 
     try{
       const result = await graphQLClient.request(query, req.body);

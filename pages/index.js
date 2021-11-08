@@ -14,8 +14,7 @@ export default function Home({ posts }) {
       </Head>
       <FeaturedPosts />
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-8'>
-
-        <div className='xl:col-span-3 xl:block lg:hidden sm:hidden xs:hidden col-span-1'>
+        <div className='xl:col-span-3 col-span-1 xl:block lg:hidden sm:hidden md:hidden xs:hidden '>
           <div className='xl:sticky relative top-8 xl:block md:hidden'>
             <DisplayNews />
           </div>

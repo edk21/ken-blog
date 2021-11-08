@@ -1,6 +1,6 @@
 import React from "react"
 import Head from 'next/head'
-import { PostCard, PostWidget, Categories, DisplayNews } from '../components';
+import { PostCard, PostWidget, Categories } from '../components';
 import { getPosts } from "../services"
 import { FeaturedPosts } from '../sections/index';
 
@@ -14,19 +14,19 @@ export default function Home({ posts }) {
       </Head>
       <FeaturedPosts />
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-8'>
-        <div className='xl:col-span-3 col-span-1 xl:block lg:hidden sm:hidden md:hidden xs:hidden '>
+        {/* <div className='xl:col-span-3 col-span-1 xl:block lg:hidden sm:hidden md:hidden xs:hidden '>
           <div className='xl:sticky relative top-8 xl:block md:hidden'>
             <DisplayNews />
           </div>
-        </div>
+        </div> */}
 
-        <div className='xl:col-span-6 lg:col-span-8 col-span-1'>
+        <div className='lg:col-span-8 col-span-1'>
           {posts.map((post, index) => (
             <PostCard post={post.node} key={index} />
           ))}
         </div>
 
-        <div className='xl:col-span-3 lg:col-span-4 col-span-1'>
+        <div className='lg:col-span-4 col-span-1'>
           <div className='lg:sticky relative top-8'>
             <PostWidget />
             <Categories />
